@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDIT: name, role and description used by browsers, search engines and link previews -->
+  <title>Alex Rivera, machine learning engineer</title>
+  <meta name="description" content="Alex Rivera builds production machine learning systems: retrieval, language models and computer vision.">
+  <meta property="og:title" content="Alex Rivera, machine learning engineer">
+  <meta property="og:description" content="Production ML systems: retrieval, language models and computer vision.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f3f5f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#140d1d" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="assets/js/map.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="wordmark" href="#top">Alex Rivera</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="wrap hero" id="top">
+      <div class="hero__text">
+        <h1 class="hero__name">Alex<br>Rivera</h1>
+        <p class="hero__lede">Machine learning engineer. I take models from research notebooks to production systems, mostly in retrieval, language and vision, and I measure whether they actually helped.</p>
+
+        <dl class="facts">
+          <div><dt>Now</dt><dd>Senior ML Engineer at Example Labs</dd></div>
+          <div><dt>Based in</dt><dd>Bengaluru, working remotely</dd></div>
+          <div><dt>Available</dt><dd>For contract work from January 2027</dd></div>
+        </dl>
+
+        <ul class="link-row">
+          <li><a href="https://github.com/your-username">GitHub</a></li>
+          <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/your-username">LinkedIn</a></li>
+          <li><a href="assets/resume.pdf">Résumé (PDF)</a></li>
+        </ul>
+      </div>
+
+      <!-- The map is drawn by assets/js/map.js from the projects in "Selected work" below.
+           Each project's data-area attribute decides which cluster it joins. -->
+      <figure class="map" aria-labelledby="map-caption">
+        <div class="map__canvas" id="work-map">
+          <svg viewBox="0 0 600 460" role="group" aria-label="Featured projects grouped by area"></svg>
+          <div class="map__tip" role="presentation" hidden></div>
+        </div>
+        <figcaption id="map-caption">Featured work, grouped by area. Select a point to read about the project.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ SELECTED WORK ============
+         Copy an <article class="project"> block to add a project.
+         - id: used by the map link, keep it unique
+         - data-area: the cluster it belongs to on the map (projects with the same value group together) -->
+    <section class="wrap section" id="work" aria-labelledby="work-title">
+      <header class="section__head">
+        <h2 id="work-title">Selected work</h2>
+        <p>Four projects that shipped and were used by real people, each with the number I was asked to move.</p>
+      </header>
+
+      <div class="projects">
+        <article class="project" id="ticket-triage" data-area="Language models">
+          <div class="project__body">
+            <h3>Support-ticket triage with a distilled language model</h3>
+            <p class="project__meta"><span class="project__area">Language models</span>, 2025</p>
+            <p>Distilled a 70B teacher into a 1B classifier that routes 40,000 support tickets a day across 120 queues. Built the labelling loop with the support team so the model improves from every misrouted ticket.</p>
+            <p class="project__stack">Built with PyTorch, Hugging Face Transformers, vLLM, Ray, Label Studio</p>
+            <p class="project__links"><a href="#">Read the write-up</a><a href="#">View code</a></p>
+          </div>
+          <div class="result">
+            <p class="result__value">94.1%</p>
+            <p class="result__label">routing accuracy, up from 81.3% with the rules-based router</p>
+          </div>
+        </article>
+
+        <article class="project" id="legal-search" data-area="Retrieval">
+          <div class="project__body">
+            <h3>Hybrid search over 30 million legal documents</h3>
+            <p class="project__meta"><span class="project__area">Retrieval</span>, 2024</p>
+            <p>Combined keyword and dense retrieval with a cross-encoder reranker, and wrote the evaluation harness: 2,000 real queries labelled by paralegals, run on every model change.</p>
+            <p class="project__stack">Built with Sentence Transformers, FAISS, Elasticsearch, FastAPI</p>
+            <p class="project__links"><a href="#">Read the write-up</a></p>
+          </div>
+          <div class="result">
+            <p class="result__value">+18 pts</p>
+            <p class="result__label">nDCG@10 over the existing keyword search</p>
+          </div>
+        </article>
+
+        <article class="project" id="defect-detection" data-area="Computer vision">
+          <div class="project__body">
+            <h3>Defect detection on a packaging line</h3>
+            <p class="project__meta"><span class="project__area">Computer vision</span>, 2023</p>
+            <p>Few-shot anomaly detection that runs at 25 frames per second on edge GPUs beside the line. Trained on 300 labelled defects, because that was all the factory had.</p>
+            <p class="project__stack">Built with PyTorch, Anomalib, ONNX Runtime, TensorRT, Jetson Orin</p>
+            <p class="project__links"><a href="#">Read the case study</a><a href="#">View code</a></p>
+          </div>
+          <div class="result">
+            <p class="result__value">0.3%</p>
+            <p class="result__label">false rejects at 99% defect recall</p>
+          </div>
+        </article>
+
+        <article class="project" id="training-platform" data-area="ML platform">
+          <div class="project__body">
+            <h3>Shared training and feature platform</h3>
+            <p class="project__meta"><span class="project__area">ML platform</span>, 2022</p>
+            <p>Replaced one-off training scripts with shared pipelines, a feature store and spot-instance scheduling. Six teams now train and deploy models the same way.</p>
+            <p class="project__stack">Built with Kubernetes, Kubeflow Pipelines, Feast, Airflow, Weights &amp; Biases</p>
+            <p class="project__links"><a href="#">Read the write-up</a></p>
+          </div>
+          <div class="result">
+            <p class="result__value">−63%</p>
+            <p class="result__label">GPU spend per training run</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="wrap section" id="experience" aria-labelledby="experience-title">
+      <header class="section__head">
+        <h2 id="experience-title">Experience</h2>
+      </header>
+
+      <ol class="timeline">
+        <li class="timeline__item">
+          <p class="timeline__when">2023 to now</p>
+          <div>
+            <h3>Senior ML Engineer, Example Labs</h3>
+            <p>Lead a team of four on search and language features used by 2 million people a month. Own the evaluation process for every model we ship.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__when">2020 to 2023</p>
+          <div>
+            <h3>ML Engineer, Northwind Analytics</h3>
+            <p>Built computer vision and forecasting systems for manufacturing clients, from data collection to on-site deployment.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__when">2018 to 2020</p>
+          <div>
+            <h3>M.S. Computer Science, Example University</h3>
+            <p>Thesis on anomaly detection under domain shift. Research assistant in the vision lab.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ WRITING & TALKS ============ -->
+    <section class="wrap section" id="writing" aria-labelledby="writing-title">
+      <header class="section__head">
+        <h2 id="writing-title">Writing and talks</h2>
+      </header>
+
+      <ul class="refs">
+        <li class="ref">
+          <p class="ref__title">Calibrated routing for small language models</p>
+          <p class="ref__detail"><strong>A. Rivera</strong>, L. Chen. Workshop on Efficient Natural Language Processing, 2025.</p>
+          <p class="ref__links"><a href="#">Paper</a><a href="#">Code</a></p>
+        </li>
+        <li class="ref">
+          <p class="ref__title">What we learned evaluating search on 2,000 real queries</p>
+          <p class="ref__detail">Blog post, 2025.</p>
+          <p class="ref__links"><a href="#">Read the post</a></p>
+        </li>
+        <li class="ref">
+          <p class="ref__title">Shipping language models on a small GPU budget</p>
+          <p class="ref__detail">Talk at PyData Bengaluru, 2024.</p>
+          <p class="ref__links"><a href="#">Slides</a><a href="#">Video</a></p>
+        </li>
+        <li class="ref">
+          <p class="ref__title">Few-shot anomaly detection under domain shift</p>
+          <p class="ref__detail"><strong>A. Rivera</strong>, M. Okafor, S. Lindqvist. Workshop on Visual Anomaly Detection, 2020.</p>
+          <p class="ref__links"><a href="#">Paper</a></p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ TOOLBOX ============ -->
+    <section class="wrap section" id="toolbox" aria-labelledby="toolbox-title">
+      <header class="section__head">
+        <h2 id="toolbox-title">Toolbox</h2>
+        <p>What I reach for, grouped by the part of the job it covers.</p>
+      </header>
+
+      <dl class="toolbox">
+        <div>
+          <dt>Modelling</dt>
+          <dd>PyTorch, JAX, Hugging Face Transformers, scikit-learn, XGBoost</dd>
+        </div>
+        <div>
+          <dt>Language models and retrieval</dt>
+          <dd>Fine-tuning with LoRA, distillation, vLLM, FAISS, Elasticsearch, rerankers</dd>
+        </div>
+        <div>
+          <dt>Serving</dt>
+          <dd>Triton Inference Server, ONNX Runtime, TensorRT, FastAPI, Ray Serve</dd>
+        </div>
+        <div>
+          <dt>Data and infrastructure</dt>
+          <dd>Spark, Airflow, Kubernetes, Terraform, AWS, Google Cloud</dd>
+        </div>
+        <div>
+          <dt>Evaluation</dt>
+          <dd>Offline test sets, A/B tests, error analysis, drift monitoring, Weights &amp; Biases</dd>
+        </div>
+        <div>
+          <dt>Languages</dt>
+          <dd>Python, SQL, C++, Go</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact" aria-labelledby="contact-title">
+      <header class="section__head">
+        <h2 id="contact-title">Get in touch</h2>
+      </header>
+      <div class="contact__body">
+        <p>If you have a model that works in a notebook and needs to work in production, I'd like to hear about it.</p>
+        <a class="contact__email" href="mailto:hello@example.com">hello@example.com</a>
+        <ul class="link-row">
+          <li><a href="https://github.com/your-username">GitHub</a></li>
+          <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/your-username">LinkedIn</a></li>
+          <li><a href="assets/resume.pdf">Résumé (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Alex Rivera. Last updated October 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>
