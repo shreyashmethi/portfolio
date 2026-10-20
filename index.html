@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- EDIT: name, role and description used by browsers, search engines and link previews -->
-  <title>Alex Rivera, machine learning engineer</title>
-  <meta name="description" content="Alex Rivera builds production machine learning systems: retrieval, language models and computer vision.">
-  <meta property="og:title" content="Alex Rivera, machine learning engineer">
-  <meta property="og:description" content="Production ML systems: retrieval, language models and computer vision.">
+  <title>Shreyash Methi, machine learning engineer</title>
+  <meta name="description" content="Shreyash Methi builds machine learning and LLM systems that run in production: propensity and forecasting models, agentic workflows and retrieval systems with hallucination guards.">
+  <meta name="author" content="Shreyash Methi">
+  <meta property="og:title" content="Shreyash Methi, machine learning engineer">
+  <meta property="og:description" content="Production ML and agentic LLM systems, built evaluation-first.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f3f5f4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#140d1d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#eef0ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121815" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add("js")</script>
-  <script src="assets/js/map.js" defer></script>
+  <script src="assets/js/ratchet.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="wordmark" href="#top">Alex Rivera</a>
+      <a class="wordmark" href="#top">Shreyash Methi</a>
       <nav aria-label="Primary">
         <ul class="nav">
           <li><a href="#work">Work</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#writing">Writing</a></li>
+          <li><a href="#approach">Approach</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -40,98 +40,144 @@
     <!-- ============ HERO ============ -->
     <section class="wrap hero" id="top">
       <div class="hero__text">
-        <h1 class="hero__name">Alex<br>Rivera</h1>
-        <p class="hero__lede">Machine learning engineer. I take models from research notebooks to production systems, mostly in retrieval, language and vision, and I measure whether they actually helped.</p>
+        <h1 class="hero__name">Shreyash<br>Methi</h1>
+        <p class="hero__lede">I build machine learning and LLM systems that run in production, and I measure whether each change actually made them better.</p>
 
         <dl class="facts">
-          <div><dt>Now</dt><dd>Senior ML Engineer at Example Labs</dd></div>
-          <div><dt>Based in</dt><dd>Bengaluru, working remotely</dd></div>
-          <div><dt>Available</dt><dd>For contract work from January 2027</dd></div>
+          <div><dt>Now</dt><dd>Machine Learning Engineer at VerticalServe, on the data science team of a Fortune 500 car rental company</dd></div>
+          <div><dt>Focus</dt><dd>Propensity and forecasting models, agentic workflows, retrieval with hallucination guards</dd></div>
+          <div><dt>Based in</dt><dd>Pune, India</dd></div>
         </dl>
 
         <ul class="link-row">
-          <li><a href="https://github.com/your-username">GitHub</a></li>
-          <li><a href="https://scholar.google.com/">Google Scholar</a></li>
-          <li><a href="https://www.linkedin.com/in/your-username">LinkedIn</a></li>
+          <li><a href="mailto:shreyashmethi@gmail.com">Email</a></li>
+          <li><a href="https://github.com/shreyashmethi">GitHub</a></li>
+          <!-- <li><a href="https://www.linkedin.com/in/shreyashmethi">LinkedIn</a></li> -->
           <li><a href="assets/resume.pdf">Résumé (PDF)</a></li>
         </ul>
       </div>
 
-      <!-- The map is drawn by assets/js/map.js from the projects in "Selected work" below.
-           Each project's data-area attribute decides which cluster it joins. -->
-      <figure class="map" aria-labelledby="map-caption">
-        <div class="map__canvas" id="work-map">
-          <svg viewBox="0 0 600 460" role="group" aria-label="Featured projects grouped by area"></svg>
-          <div class="map__tip" role="presentation" hidden></div>
+      <figure class="ratchet" aria-labelledby="ratchet-caption">
+        <div class="ratchet__plot" id="ratchet">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Scatter of 425 experiment rounds. Most proposed changes fall below the current best and are reverted; the accepted ones step the best score up to a 9.5 percent gain in Recall at 20 percent."></svg>
         </div>
-        <figcaption id="map-caption">Featured work, grouped by area. Select a point to read about the project.</figcaption>
+        <figcaption id="ratchet-caption">
+          <span class="key"><span class="key__dot key__dot--kept" aria-hidden="true"></span>Kept: passed the validation gates</span>
+          <span class="key"><span class="key__dot key__dot--reverted" aria-hidden="true"></span>Reverted</span>
+          <span class="ratchet__note">425 rounds of an agent proposing changes to a production model, for $31 of API spend. The start and end points are real; the path between them is illustrative. <a href="#ratchet-loop">How the loop works</a></span>
+        </figcaption>
       </figure>
     </section>
 
-    <!-- ============ SELECTED WORK ============
-         Copy an <article class="project"> block to add a project.
-         - id: used by the map link, keep it unique
-         - data-area: the cluster it belongs to on the map (projects with the same value group together) -->
+    <!-- ============ SELECTED WORK ============ -->
     <section class="wrap section" id="work" aria-labelledby="work-title">
       <header class="section__head">
         <h2 id="work-title">Selected work</h2>
-        <p>Four projects that shipped and were used by real people, each with the number I was asked to move.</p>
+        <p>Client work is described without confidential detail. Numbers are from production runs unless noted.</p>
       </header>
 
+      <h3 class="group-title">Production machine learning</h3>
       <div class="projects">
-        <article class="project" id="ticket-triage" data-area="Language models">
+        <article class="project" id="ratchet-loop">
           <div class="project__body">
-            <h3>Support-ticket triage with a distilled language model</h3>
-            <p class="project__meta"><span class="project__area">Language models</span>, 2025</p>
-            <p>Distilled a 70B teacher into a 1B classifier that routes 40,000 support tickets a day across 120 queues. Built the labelling loop with the support team so the model improves from every misrouted ticket.</p>
-            <p class="project__stack">Built with PyTorch, Hugging Face Transformers, vLLM, Ray, Label Studio</p>
-            <p class="project__links"><a href="#">Read the write-up</a><a href="#">View code</a></p>
+            <h4>A self-improving experimentation loop for production models</h4>
+            <p class="project__meta">I led this program, for a Fortune 500 car rental company</p>
+            <p>A Claude agent proposes a change to the training code of a production model, retrains it, and keeps the change only if it beats the current best on out-of-time validation. Anything that fails a gate is reverted. The gates are tested with pytest and Hypothesis, and a hard budget cap stops runs before they cost more than agreed. It runs across five production models.</p>
+            <p class="project__stack">Claude API, Python, XGBoost, Optuna, pytest, Hypothesis</p>
           </div>
           <div class="result">
-            <p class="result__value">94.1%</p>
-            <p class="result__label">routing accuracy, up from 81.3% with the rules-based router</p>
+            <p class="result__value">+9.5%</p>
+            <p class="result__label">Recall@20% on the propensity model, from 425 experiment rounds that cost $31</p>
           </div>
         </article>
 
-        <article class="project" id="legal-search" data-area="Retrieval">
+        <article class="project" id="propensity">
           <div class="project__body">
-            <h3>Hybrid search over 30 million legal documents</h3>
-            <p class="project__meta"><span class="project__area">Retrieval</span>, 2024</p>
-            <p>Combined keyword and dense retrieval with a cross-encoder reranker, and wrote the evaluation harness: 2,000 real queries labelled by paralegals, run on every model change.</p>
-            <p class="project__stack">Built with Sentence Transformers, FAISS, Elasticsearch, FastAPI</p>
-            <p class="project__links"><a href="#">Read the write-up</a></p>
+            <h4>Propensity and no-show models with a weekly retrain</h4>
+            <p class="project__meta">Built and maintained, for a Fortune 500 car rental company</p>
+            <p>Models that predict which customers will buy each of five rental add-ons, and which bookings will be cancelled or not collected. Trained on 7.5 million records with strict out-of-time splits and Platt calibration, explained with SHAP, and promoted through champion/challenger gates on a weekly OCI pipeline. Along the way I found and fixed three kinds of feature leakage, in RFM ranks, lifetime-value features and cumulative counts, that had been inflating offline scores.</p>
+            <p class="project__stack">XGBoost, LightGBM, CatBoost, Optuna, SHAP, OCI Data Science, NIST AI RMF model cards</p>
           </div>
           <div class="result">
-            <p class="result__value">+18 pts</p>
-            <p class="result__label">nDCG@10 over the existing keyword search</p>
+            <p class="result__value">22→2</p>
+            <p class="result__label">days to refresh a model, after automating retraining and acceptance</p>
           </div>
         </article>
 
-        <article class="project" id="defect-detection" data-area="Computer vision">
+        <article class="project" id="segmentation">
           <div class="project__body">
-            <h3>Defect detection on a packaging line</h3>
-            <p class="project__meta"><span class="project__area">Computer vision</span>, 2023</p>
-            <p>Few-shot anomaly detection that runs at 25 frames per second on edge GPUs beside the line. Trained on 300 labelled defects, because that was all the factory had.</p>
-            <p class="project__stack">Built with PyTorch, Anomalib, ONNX Runtime, TensorRT, Jetson Orin</p>
-            <p class="project__links"><a href="#">Read the case study</a><a href="#">View code</a></p>
+            <h4>Customer segmentation, fleet maintenance and the data behind them</h4>
+            <p class="project__meta">Built, for a Fortune 500 car rental company</p>
+            <p>Rebuilt customer segmentation with UMAP and Gaussian mixture models after KMeans failed to find stable groups, and built a predictive maintenance model for the rental fleet tuned for PR-AUC, since breakdowns are rare. Both draw on a Redshift-to-OCI export I wrote that keeps future data out of training rows.</p>
+            <p class="project__stack">UMAP, scikit-learn, XGBoost, Oracle, Redshift, OCI Object Storage</p>
           </div>
           <div class="result">
-            <p class="result__value">0.3%</p>
-            <p class="result__label">false rejects at 99% defect recall</p>
+            <p class="result__value">34M</p>
+            <p class="result__label">rows moved per export, with the payload 100 to 1,000 times smaller</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="group-title">Agents and LLM systems</h3>
+      <div class="projects">
+        <article class="project" id="insightagent">
+          <div class="project__body">
+            <h4>InsightAgent, a workflow engine for LLM agents</h4>
+            <p class="project__meta">Core components, VerticalServe product</p>
+            <p>A LangGraph engine for multi-step agent workflows, served over FastAPI with server-sent events. I built stateful runs that pause and resume, human review steps, routing and control-flow nodes, and the integration with MCP tool servers. We used it to deliver an end-to-end insurance claims intake workflow.</p>
+            <p class="project__stack">LangGraph, FastAPI, SSE, MCP, Pydantic, SQLAlchemy</p>
+          </div>
+          <div class="result result--quiet">
+            <p class="result__value">Pause, review, resume</p>
+            <p class="result__label">so a person can approve any step before the agent continues</p>
           </div>
         </article>
 
-        <article class="project" id="training-platform" data-area="ML platform">
+        <article class="project" id="insightask">
           <div class="project__body">
-            <h3>Shared training and feature platform</h3>
-            <p class="project__meta"><span class="project__area">ML platform</span>, 2022</p>
-            <p>Replaced one-off training scripts with shared pipelines, a feature store and spot-instance scheduling. Six teams now train and deploy models the same way.</p>
-            <p class="project__stack">Built with Kubernetes, Kubeflow Pipelines, Feast, Airflow, Weights &amp; Biases</p>
-            <p class="project__links"><a href="#">Read the write-up</a></p>
+            <h4>Agents for InsightAsk, an enterprise copilot</h4>
+            <p class="project__meta">Core components, VerticalServe product</p>
+            <p>InsightAsk answers questions from documents, databases and a knowledge graph. I built the Assist, Report, Workspace and Extraction agents, its Microsoft 365 orchestration for Teams and SharePoint, the Neo4j GraphRAG integration, and MCP adapters for GitHub, Slack, Atlassian, ServiceNow and Microsoft Graph.</p>
+            <p class="project__stack">LangGraph, Claude, AWS Bedrock, OpenAI, Neo4j, MCP, OpenSearch</p>
           </div>
           <div class="result">
-            <p class="result__value">−63%</p>
-            <p class="result__label">GPU spend per training run</p>
+            <p class="result__value">4 + 5</p>
+            <p class="result__label">agents and MCP connectors built, across RAG, text-to-SQL and GraphRAG</p>
+          </div>
+        </article>
+
+        <article class="project" id="extraction">
+          <div class="project__body">
+            <h4>Document extraction with provenance</h4>
+            <p class="project__meta">Built, VerticalServe product</p>
+            <p>Pulls structured fields out of PDF, Office, Excel and image files using vision LLMs and schemas written as specs. Every field comes back with a confidence score and the place in the source it came from, so reviewers can check it quickly. Shipped as containers through a CodeBuild-to-ECR pipeline on AWS.</p>
+            <p class="project__stack">Vision LLMs, Python, Docker, AWS (S3, Bedrock, ECR, CodeBuild, Secrets Manager)</p>
+          </div>
+          <div class="result result--quiet">
+            <p class="result__value">Per field</p>
+            <p class="result__label">confidence and source location on every extracted value</p>
+          </div>
+        </article>
+
+        <article class="project" id="offline-rag">
+          <div class="project__body">
+            <h4>Offline document RAG with hallucination guards</h4>
+            <p class="project__meta">Personal project</p>
+            <p>A fully self-hosted question-answering system for long technical documents. Docling and TableFormer parse the files, Qdrant runs hybrid search, a knowledge graph links entities, and LangGraph corrective-RAG agents retry weak retrievals. Answers pass through guards that catch fabricated citations, swapped acronyms and claims with no source.</p>
+            <p class="project__stack">LangGraph, vLLM on 2× NVIDIA T4, Qdrant, Docling, NetworkX</p>
+          </div>
+          <div class="result">
+            <p class="result__value">3</p>
+            <p class="result__label">layers of hallucination guards between the model and the reader</p>
+          </div>
+        </article>
+
+        <article class="project" id="tick-and-tie">
+          <div class="project__body">
+            <h4>Tick &amp; Tie, multi-agent financial reconciliation</h4>
+            <p class="project__meta">Personal project</p>
+            <p>Cooperating agents find the same figure across a company's financial documents, reason over how each is derived, and flag the ones that don't tie out, with a FastAPI backend and a React interface for reviewing every match.</p>
+            <p class="project__stack">LangGraph, FastAPI, React</p>
           </div>
         </article>
       </div>
@@ -145,90 +191,88 @@
 
       <ol class="timeline">
         <li class="timeline__item">
-          <p class="timeline__when">2023 to now</p>
+          <p class="timeline__when">Aug 2025 to now</p>
           <div>
-            <h3>Senior ML Engineer, Example Labs</h3>
-            <p>Lead a team of four on search and language features used by 2 million people a month. Own the evaluation process for every model we ship.</p>
+            <h3>Machine Learning Engineer, VerticalServe</h3>
+            <p>Embedded with the data science team of a Fortune 500 car rental company, where I build and run its production ML platform. I also build core components of VerticalServe's GenAI products, including InsightAgent and InsightAsk, and deployed one of them on AWS.</p>
           </div>
         </li>
         <li class="timeline__item">
-          <p class="timeline__when">2020 to 2023</p>
+          <p class="timeline__when">Mar 2024 to Aug 2025</p>
           <div>
-            <h3>ML Engineer, Northwind Analytics</h3>
-            <p>Built computer vision and forecasting systems for manufacturing clients, from data collection to on-site deployment.</p>
+            <h3>Data Scientist, Melio Labs</h3>
+            <p>Trained Transformer time-series classifiers, including TARNet, that generalise across more than 40 bacterial species, and packaged models as Python libraries with CI so other teams could reuse them. Joined as an intern.</p>
           </div>
         </li>
         <li class="timeline__item">
-          <p class="timeline__when">2018 to 2020</p>
+          <p class="timeline__when">Aug 2022 to Feb 2024</p>
           <div>
-            <h3>M.S. Computer Science, Example University</h3>
-            <p>Thesis on anomaly detection under domain shift. Research assistant in the vision lab.</p>
+            <h3>Freelance ML engineer</h3>
+            <p>Shipped four applications for independent clients: <a href="https://gptsahib.com">GPTSahib</a>, a RAG chatbot grounded in the Sri Guru Granth Sahib; a drone detector for camera feeds; dental disease detection for IntelliDent on GCP; and livestock recognition for ISKCON, running on low-power edge devices.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__when">2020 to 2024</p>
+          <div>
+            <h3>B.Tech, Malaviya National Institute of Technology Jaipur</h3>
+            <p>President of the Science and Technology Society, leading a 250-person team to run Sphinx, the institute's techno-management festival.</p>
           </div>
         </li>
       </ol>
     </section>
 
-    <!-- ============ WRITING & TALKS ============ -->
-    <section class="wrap section" id="writing" aria-labelledby="writing-title">
+    <!-- ============ APPROACH ============ -->
+    <section class="wrap section" id="approach" aria-labelledby="approach-title">
       <header class="section__head">
-        <h2 id="writing-title">Writing and talks</h2>
+        <h2 id="approach-title">How I work</h2>
       </header>
 
-      <ul class="refs">
-        <li class="ref">
-          <p class="ref__title">Calibrated routing for small language models</p>
-          <p class="ref__detail"><strong>A. Rivera</strong>, L. Chen. Workshop on Efficient Natural Language Processing, 2025.</p>
-          <p class="ref__links"><a href="#">Paper</a><a href="#">Code</a></p>
-        </li>
-        <li class="ref">
-          <p class="ref__title">What we learned evaluating search on 2,000 real queries</p>
-          <p class="ref__detail">Blog post, 2025.</p>
-          <p class="ref__links"><a href="#">Read the post</a></p>
-        </li>
-        <li class="ref">
-          <p class="ref__title">Shipping language models on a small GPU budget</p>
-          <p class="ref__detail">Talk at PyData Bengaluru, 2024.</p>
-          <p class="ref__links"><a href="#">Slides</a><a href="#">Video</a></p>
-        </li>
-        <li class="ref">
-          <p class="ref__title">Few-shot anomaly detection under domain shift</p>
-          <p class="ref__detail"><strong>A. Rivera</strong>, M. Okafor, S. Lindqvist. Workshop on Visual Anomaly Detection, 2020.</p>
-          <p class="ref__links"><a href="#">Paper</a></p>
-        </li>
-      </ul>
+      <div class="approach">
+        <div>
+          <h3>Distrust the offline score</h3>
+          <p>Out-of-time splits, calibration and a hunt for leakage come before any tuning. A model that looks better in a notebook and worse in production hasn't improved.</p>
+        </div>
+        <div>
+          <h3>Let agents propose, let tests decide</h3>
+          <p>LLM agents are good at generating options and bad at judging them. I put tested gates and human review between what an agent suggests and what ships.</p>
+        </div>
+        <div>
+          <h3>Show the source</h3>
+          <p>An LLM answer should point to where it came from, and the system should notice when it doesn't. That's what the citation and provenance checks in my retrieval work are for.</p>
+        </div>
+      </div>
     </section>
 
     <!-- ============ TOOLBOX ============ -->
     <section class="wrap section" id="toolbox" aria-labelledby="toolbox-title">
       <header class="section__head">
         <h2 id="toolbox-title">Toolbox</h2>
-        <p>What I reach for, grouped by the part of the job it covers.</p>
       </header>
 
       <dl class="toolbox">
         <div>
           <dt>Modelling</dt>
-          <dd>PyTorch, JAX, Hugging Face Transformers, scikit-learn, XGBoost</dd>
+          <dd>XGBoost, LightGBM, CatBoost, scikit-learn, PyTorch, Optuna, SHAP, UMAP</dd>
         </div>
         <div>
-          <dt>Language models and retrieval</dt>
-          <dd>Fine-tuning with LoRA, distillation, vLLM, FAISS, Elasticsearch, rerankers</dd>
+          <dt>Agents and LLMs</dt>
+          <dd>LangGraph, LangChain, MCP, Claude API, AWS Bedrock, OpenAI, vLLM</dd>
         </div>
         <div>
-          <dt>Serving</dt>
-          <dd>Triton Inference Server, ONNX Runtime, TensorRT, FastAPI, Ray Serve</dd>
+          <dt>Retrieval</dt>
+          <dd>Qdrant, Neo4j GraphRAG, OpenSearch, Pinecone, FAISS, Docling, text-to-SQL</dd>
         </div>
         <div>
-          <dt>Data and infrastructure</dt>
-          <dd>Spark, Airflow, Kubernetes, Terraform, AWS, Google Cloud</dd>
+          <dt>Serving and backend</dt>
+          <dd>FastAPI, Pydantic, SQLAlchemy, server-sent events, Docker</dd>
         </div>
         <div>
-          <dt>Evaluation</dt>
-          <dd>Offline test sets, A/B tests, error analysis, drift monitoring, Weights &amp; Biases</dd>
+          <dt>Data and cloud</dt>
+          <dd>OCI Data Science and Object Storage, AWS (S3, ECR, CodeBuild), GCP, Redshift, Oracle, PostgreSQL</dd>
         </div>
         <div>
-          <dt>Languages</dt>
-          <dd>Python, SQL, C++, Go</dd>
+          <dt>Testing and evaluation</dt>
+          <dd>pytest, Hypothesis, out-of-time validation, calibration, champion/challenger gates, drift monitoring</dd>
         </div>
       </dl>
     </section>
@@ -239,12 +283,10 @@
         <h2 id="contact-title">Get in touch</h2>
       </header>
       <div class="contact__body">
-        <p>If you have a model that works in a notebook and needs to work in production, I'd like to hear about it.</p>
-        <a class="contact__email" href="mailto:hello@example.com">hello@example.com</a>
+        <p>If you're working on a model or an agent that needs to hold up in production, I'd like to hear about it.</p>
+        <a class="contact__email" href="mailto:shreyashmethi@gmail.com">shreyashmethi@gmail.com</a>
         <ul class="link-row">
-          <li><a href="https://github.com/your-username">GitHub</a></li>
-          <li><a href="https://scholar.google.com/">Google Scholar</a></li>
-          <li><a href="https://www.linkedin.com/in/your-username">LinkedIn</a></li>
+          <li><a href="https://github.com/shreyashmethi">GitHub</a></li>
           <li><a href="assets/resume.pdf">Résumé (PDF)</a></li>
         </ul>
       </div>
@@ -253,7 +295,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>© 2026 Alex Rivera. Last updated October 2026.</p>
+      <p>© 2026 Shreyash Methi. Last updated October 2026.</p>
     </div>
   </footer>
 </body>
